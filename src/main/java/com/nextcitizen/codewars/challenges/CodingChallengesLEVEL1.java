@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 @Component
-public class CodingChallenges {
+public class CodingChallengesLEVEL1 {
 
 	String appendedString = "";
 
@@ -340,5 +340,20 @@ public class CodingChallenges {
 	    }
 	       return output;
 	  }
+	 
+	 /**
+	  * Create a method that removes the first and last characters of a string.You're given one parameter, the original string.
+	  * 
+	  */
+	public String removeFirstAndLastCharacter(String input) {
+
+		if (StringUtils.hasText(input) && input.length() >= 2) {
+			return input.substring(1, input.length() - 1);
+		} else {
+			throw new IllegalArgumentException("Method has been passed an illegal or inappropriate argument, Input cannot be null and length must be greater than 1 !!");
+		}
+
+	}
+	 
 		
 }
