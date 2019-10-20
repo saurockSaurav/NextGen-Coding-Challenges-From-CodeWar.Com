@@ -17,13 +17,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.nextcitizen.codewars.challenges.CodingChallenges;
+
+
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = CodingPuzzles.class)
+@SpringBootTest(classes = CodingChallenges.class)
 public class CodingPuzzlesTest {
 	
 	@Autowired
-	private CodingPuzzles codingPuzzles;
+	private CodingChallenges codingChallenges;
 	
 	/*
 	 * Write a Java program to print 'Hello' on screen and then print your name on a separate line
@@ -32,7 +35,7 @@ public class CodingPuzzlesTest {
 	
 	@Test
 	public void test_PrintHelloInFirstLineAndNameInSecond() {
-		assertEquals("Hello\nSaurav", codingPuzzles.printHelloInFirstLineAndNameInSecond("Hello", "Saurav"));
+		assertEquals("Hello\nSaurav", codingChallenges.printHelloInFirstLineAndNameInSecond("Hello", "Saurav"));
 	}
 	
 	
@@ -43,7 +46,7 @@ public class CodingPuzzlesTest {
 	@Test
 	public void test_PrintMultiplicationUpto10s() {
 		List<Integer> aList = new ArrayList<Integer>( Arrays.asList(8, 16, 24, 32, 40, 48, 56, 64, 72, 80) );
-		assertEquals(aList, codingPuzzles.printMultiplicationUpto10(8));
+		assertEquals(aList, codingChallenges.printMultiplicationUpto10(8));
 	}
 	
 	/*
@@ -53,7 +56,7 @@ public class CodingPuzzlesTest {
 	
 	@Test
 	public void test_ReverseStringUsingRecursiveMethods() {
-		assertEquals("987654321", codingPuzzles.reverseStringUsingRecursiveMethod("123456789"));
+		assertEquals("987654321", codingChallenges.reverseStringUsingRecursiveMethod("123456789"));
 	}
 	
 	/*
@@ -63,7 +66,7 @@ public class CodingPuzzlesTest {
 	@Test
 	public void test__GetSmallestNumber() {
 		int[] arry = {10,20,5,80,99};
-		assertEquals(5, codingPuzzles.getSmallestNumber(arry));
+		assertEquals(5, codingChallenges.getSmallestNumber(arry));
 		
 	}
 
@@ -74,7 +77,7 @@ public class CodingPuzzlesTest {
 	@Test
 	public void test_GetlargestNumber() {
 		int[] arry = {10,20,5,80,99};
-		assertEquals(99, codingPuzzles.getlargestNumber(arry));
+		assertEquals(99, codingChallenges.getlargestNumber(arry));
 	}
 	
 	/*
@@ -85,7 +88,7 @@ public class CodingPuzzlesTest {
 	public void test_FindSmallestAndLargestNumber() {
 		List<Integer> lst = new ArrayList<>(Arrays.asList(1,10,0,20));
 		List<Integer> smallestAndLargest = new ArrayList<>(Arrays.asList(0,20));
-		assertEquals(smallestAndLargest, codingPuzzles.findSmallestAndLargestNumber(lst));
+		assertEquals(smallestAndLargest, codingChallenges.findSmallestAndLargestNumber(lst));
 	}
 	
 	/*
@@ -94,7 +97,7 @@ public class CodingPuzzlesTest {
 	 */
 	@Test
 	 public void test_GetSumOfNaturalNumber() {
-	      assertEquals(23, codingPuzzles.getSumOfNaturalNumber(10));
+	      assertEquals(23, codingChallenges.getSumOfNaturalNumber(10));
 	    }
 	
 	/*
@@ -104,13 +107,13 @@ public class CodingPuzzlesTest {
 	
 	@Test
 	public void test_IsValidPin() {
-		assertFalse(codingPuzzles.isValidPin("aaa"));
-		assertFalse(codingPuzzles.isValidPin("1234567"));
-		assertTrue(codingPuzzles.isValidPin("1234"));
-		assertFalse(codingPuzzles.isValidPin("1a2b3c"));
-		assertFalse(codingPuzzles.isValidPin("123"));
-		assertFalse(codingPuzzles.isValidPin("       "));
-		assertFalse(codingPuzzles.isValidPin(null));
+		assertFalse(codingChallenges.isValidPin("aaa"));
+		assertFalse(codingChallenges.isValidPin("1234567"));
+		assertTrue(codingChallenges.isValidPin("1234"));
+		assertFalse(codingChallenges.isValidPin("1a2b3c"));
+		assertFalse(codingChallenges.isValidPin("123"));
+		assertFalse(codingChallenges.isValidPin("       "));
+		assertFalse(codingChallenges.isValidPin(null));
 	}
 	
 	/*
@@ -119,19 +122,19 @@ public class CodingPuzzlesTest {
 	 */
 	@Test
 	public void test_IsTextAMatch() {
-		assertFalse(codingPuzzles.takesUpto4DigitAfterAlphabetic("text12345123"));
-		assertFalse(codingPuzzles.takesUpto4DigitAfterAlphabetic("text"));
-		assertFalse(codingPuzzles.takesUpto4DigitAfterAlphabetic("1234t"));
-		assertFalse(codingPuzzles.takesUpto4DigitAfterAlphabetic("12345"));
-		assertFalse(codingPuzzles.takesUpto4DigitAfterAlphabetic("t123ext"));
-		assertTrue(codingPuzzles.takesUpto4DigitAfterAlphabetic("t1"));
-		assertTrue(codingPuzzles.takesUpto4DigitAfterAlphabetic("text1"));
-		assertTrue(codingPuzzles.takesUpto4DigitAfterAlphabetic("text12"));
-		assertTrue(codingPuzzles.takesUpto4DigitAfterAlphabetic("text1234"));
-		assertFalse(codingPuzzles.takesUpto4DigitAfterAlphabetic("text12345"));
-		assertFalse(codingPuzzles.takesUpto4DigitAfterAlphabetic("text12345123"));
-		assertFalse(codingPuzzles.takesUpto4DigitAfterAlphabetic(null));
-		assertFalse(codingPuzzles.takesUpto4DigitAfterAlphabetic("   "));
+		assertFalse(codingChallenges.takesUpto4DigitAfterAlphabetic("text12345123"));
+		assertFalse(codingChallenges.takesUpto4DigitAfterAlphabetic("text"));
+		assertFalse(codingChallenges.takesUpto4DigitAfterAlphabetic("1234t"));
+		assertFalse(codingChallenges.takesUpto4DigitAfterAlphabetic("12345"));
+		assertFalse(codingChallenges.takesUpto4DigitAfterAlphabetic("t123ext"));
+		assertTrue(codingChallenges.takesUpto4DigitAfterAlphabetic("t1"));
+		assertTrue(codingChallenges.takesUpto4DigitAfterAlphabetic("text1"));
+		assertTrue(codingChallenges.takesUpto4DigitAfterAlphabetic("text12"));
+		assertTrue(codingChallenges.takesUpto4DigitAfterAlphabetic("text1234"));
+		assertFalse(codingChallenges.takesUpto4DigitAfterAlphabetic("text12345"));
+		assertFalse(codingChallenges.takesUpto4DigitAfterAlphabetic("text12345123"));
+		assertFalse(codingChallenges.takesUpto4DigitAfterAlphabetic(null));
+		assertFalse(codingChallenges.takesUpto4DigitAfterAlphabetic("   "));
 	}
 	
 	
@@ -142,14 +145,14 @@ public class CodingPuzzlesTest {
 	 */
 	@Test
 	public void test_IsValidCVV() {
-		assertFalse(codingPuzzles.isValidCVV(null));
-		assertFalse(codingPuzzles.isValidCVV("  "));
-		assertFalse(codingPuzzles.isValidCVV("a1c"));
-		assertFalse(codingPuzzles.isValidCVV("abc"));
-		assertFalse(codingPuzzles.isValidCVV("1ab"));
-		assertFalse(codingPuzzles.isValidCVV("ab1"));
-		assertTrue(codingPuzzles.isValidCVV("123"));
-		assertFalse(codingPuzzles.isValidCVV("1234"));
+		assertFalse(codingChallenges.isValidCVV(null));
+		assertFalse(codingChallenges.isValidCVV("  "));
+		assertFalse(codingChallenges.isValidCVV("a1c"));
+		assertFalse(codingChallenges.isValidCVV("abc"));
+		assertFalse(codingChallenges.isValidCVV("1ab"));
+		assertFalse(codingChallenges.isValidCVV("ab1"));
+		assertTrue(codingChallenges.isValidCVV("123"));
+		assertFalse(codingChallenges.isValidCVV("1234"));
 		
 	}
 	
@@ -158,11 +161,11 @@ public class CodingPuzzlesTest {
 	 * Example: (new int[]{1,2,3,4,5}) == {1,5} **/
 	@Test
     public void test_MinAndMAxArray() {
-      assertArrayEquals(new int[]{1,5}, codingPuzzles.miniumMaximum(new int[]{1,5,4}));
-      assertArrayEquals(new int[]{5,2334454}, codingPuzzles.miniumMaximum(new int[]{2334454,5}));
-      assertArrayEquals(new int[]{1,1}, codingPuzzles.miniumMaximum(new int[]{1}));
-      assertArrayEquals(new int[]{-1,1}, codingPuzzles.miniumMaximum(new int[]{0,-1,1}));
-      assertArrayEquals(new int[]{-1,1}, codingPuzzles.miniumMaximum(new int[]{0,-1,1,0,-1,1,0,-1,1}));
+      assertArrayEquals(new int[]{1,5}, codingChallenges.miniumMaximum(new int[]{1,5,4}));
+      assertArrayEquals(new int[]{5,2334454}, codingChallenges.miniumMaximum(new int[]{2334454,5}));
+      assertArrayEquals(new int[]{1,1}, codingChallenges.miniumMaximum(new int[]{1}));
+      assertArrayEquals(new int[]{-1,1}, codingChallenges.miniumMaximum(new int[]{0,-1,1}));
+      assertArrayEquals(new int[]{-1,1}, codingChallenges.miniumMaximum(new int[]{0,-1,1,0,-1,1,0,-1,1}));
     }
 	
 	/**Second test cases by using random number **/
@@ -171,7 +174,7 @@ public class CodingPuzzlesTest {
 		Random  rand = new Random();
 		for (int i = 0; i < 20; i++) {
 			int r = rand.nextInt();
-			assertArrayEquals(new int[] { r, r }, codingPuzzles.miniumMaximum(new int[] { r }));
+			assertArrayEquals(new int[] { r, r }, codingChallenges.miniumMaximum(new int[] { r }));
 		}
 	}  
 	
@@ -188,13 +191,13 @@ public class CodingPuzzlesTest {
 	 *  ({1}) and the sum of the right side of the index ({50,-51,1,1}) both equal 1.
 	 */
 	public void test_FindEvenIndex() {
-		assertEquals(3, codingPuzzles.findEvenIndex(new int[] { 1, 2, 3, 4, 3, 2, 1 }));
-		assertEquals(1, codingPuzzles.findEvenIndex(new int[] { 1, 100, 50, -51, 1, 1 }));
-		assertEquals(-1, codingPuzzles.findEvenIndex(new int[] { 1, 2, 3, 4, 5, 6 }));
-		assertEquals(3, codingPuzzles.findEvenIndex(new int[] { 20, 10, 30, 10, 10, 15, 35 }));
-		assertEquals(-1, codingPuzzles.findEvenIndex(new int[] { -8505, -5130, 1926, -9026 }));
-		assertEquals(1, codingPuzzles.findEvenIndex(new int[] { 2824, 1774, -1490, -9084, -9696, 23094 }));
-		assertEquals(6, codingPuzzles.findEvenIndex(new int[] { 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4 }));
+		assertEquals(3, codingChallenges.findEvenIndex(new int[] { 1, 2, 3, 4, 3, 2, 1 }));
+		assertEquals(1, codingChallenges.findEvenIndex(new int[] { 1, 100, 50, -51, 1, 1 }));
+		assertEquals(-1, codingChallenges.findEvenIndex(new int[] { 1, 2, 3, 4, 5, 6 }));
+		assertEquals(3, codingChallenges.findEvenIndex(new int[] { 20, 10, 30, 10, 10, 15, 35 }));
+		assertEquals(-1, codingChallenges.findEvenIndex(new int[] { -8505, -5130, 1926, -9026 }));
+		assertEquals(1, codingChallenges.findEvenIndex(new int[] { 2824, 1774, -1490, -9084, -9696, 23094 }));
+		assertEquals(6, codingChallenges.findEvenIndex(new int[] { 4, 5, 6, 7, 8, 9, 10, 9, 8, 7, 6, 5, 4 }));
 	}
 	
 	/**
@@ -205,17 +208,17 @@ public class CodingPuzzlesTest {
 	 */
 	@Test
     public void test_SumIsOddOrEven() {
-        assertEquals("odd", codingPuzzles.sumIsOddOrEven(new int[] {2, 5, 34, 6}));
-        assertEquals("even", codingPuzzles.sumIsOddOrEven(new int[] {2, 2, 2, 2}));
+        assertEquals("odd", codingChallenges.sumIsOddOrEven(new int[] {2, 5, 34, 6}));
+        assertEquals("even", codingChallenges.sumIsOddOrEven(new int[] {2, 2, 2, 2}));
     }
 	
 	
 	 @Test
 	    public void test_SquareDigits() {
-	      assertEquals(811181, codingPuzzles.squareDigits(9119));
-	      assertEquals(44991616, codingPuzzles.squareDigits(223344));
-	      assertEquals(149, codingPuzzles.squareDigits(123));
-	      assertEquals(0, codingPuzzles.squareDigits(0));
+	      assertEquals(811181, codingChallenges.squareDigits(9119));
+	      assertEquals(44991616, codingChallenges.squareDigits(223344));
+	      assertEquals(149, codingChallenges.squareDigits(123));
+	      assertEquals(0, codingChallenges.squareDigits(0));
 	    }
 	 
 	/**
@@ -225,14 +228,14 @@ public class CodingPuzzlesTest {
 
 	@Test
 	public void test_isValidEmail() {
-		assertFalse(codingPuzzles.isValidEmail(null));
-		assertFalse(codingPuzzles.isValidEmail("   "));
-		assertFalse(codingPuzzles.isValidEmail("JunitTest.com"));
-		assertFalse(codingPuzzles.isValidEmail("@JunitTest.com"));
-		assertFalse(codingPuzzles.isValidEmail("j@JunitTest,com"));
-		assertTrue(codingPuzzles.isValidEmail(".@JunitTest.com"));
-		assertTrue(codingPuzzles.isValidEmail("j@JunitTest.com"));
-		assertTrue(codingPuzzles.isValidEmail("JunitTest@JunitTest.com"));
+		assertFalse(codingChallenges.isValidEmail(null));
+		assertFalse(codingChallenges.isValidEmail("   "));
+		assertFalse(codingChallenges.isValidEmail("JunitTest.com"));
+		assertFalse(codingChallenges.isValidEmail("@JunitTest.com"));
+		assertFalse(codingChallenges.isValidEmail("j@JunitTest,com"));
+		assertTrue(codingChallenges.isValidEmail(".@JunitTest.com"));
+		assertTrue(codingChallenges.isValidEmail("j@JunitTest.com"));
+		assertTrue(codingChallenges.isValidEmail("JunitTest@JunitTest.com"));
 	}
 	
 	/**
@@ -241,19 +244,19 @@ public class CodingPuzzlesTest {
 	@Test
 	public void test_doesArrayListContainsKeyWords() {
 		String[] keyword1 = { "E", "U" };
-		assertTrue(codingPuzzles.doesArrayListContainsKeyWords(keyword1));
+		assertTrue(codingChallenges.doesArrayListContainsKeyWords(keyword1));
 	
 		String[] keyword2 = {"E"};
-		assertTrue(codingPuzzles.doesArrayListContainsKeyWords(keyword2));
+		assertTrue(codingChallenges.doesArrayListContainsKeyWords(keyword2));
 		
 		String[] keyword3 = {"T"};
-		assertFalse(codingPuzzles.doesArrayListContainsKeyWords(keyword3));
+		assertFalse(codingChallenges.doesArrayListContainsKeyWords(keyword3));
 		
 		String[] keyword4 = {null};
-		assertFalse(codingPuzzles.doesArrayListContainsKeyWords(keyword4));
+		assertFalse(codingChallenges.doesArrayListContainsKeyWords(keyword4));
 		
 		String[] keyword5 = {" "};
-		assertFalse(codingPuzzles.doesArrayListContainsKeyWords(keyword5));
+		assertFalse(codingChallenges.doesArrayListContainsKeyWords(keyword5));
 	}
 	
 	
@@ -263,8 +266,8 @@ public class CodingPuzzlesTest {
 	 */
 	@Ignore
 	public void test_doesPasswordMeetsStandards() {
-		assertFalse(codingPuzzles.doesPasswordMeetsStandards("123"));
-		assertTrue(codingPuzzles.doesPasswordMeetsStandards("a1b2c3"));
+		assertFalse(codingChallenges.doesPasswordMeetsStandards("123"));
+		assertTrue(codingChallenges.doesPasswordMeetsStandards("a1b2c3"));
 	}
 	
 	/**If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
@@ -275,8 +278,8 @@ public class CodingPuzzlesTest {
 	
 	@Test
 	 public void getSumOfNaturalNumber_Test() {
-	      assertEquals(23, codingPuzzles.getSumOfNaturalNumber(10,3,5));
-	      assertEquals(27, codingPuzzles.getSumOfNaturalNumber(10,2,7));
+	      assertEquals(23, codingChallenges.getSumOfNaturalNumber(10,3,5));
+	      assertEquals(27, codingChallenges.getSumOfNaturalNumber(10,2,7));
 	    }
 	
 }
