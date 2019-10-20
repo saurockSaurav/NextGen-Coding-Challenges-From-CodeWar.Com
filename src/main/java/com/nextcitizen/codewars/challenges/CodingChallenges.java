@@ -1,4 +1,4 @@
-package com.nextcitizen.CodingPuzzles;
+package com.nextcitizen.codewars.challenges;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
 @Component
-public class CodingPuzzles {
+public class CodingChallenges {
 
 	String appendedString = "";
 
