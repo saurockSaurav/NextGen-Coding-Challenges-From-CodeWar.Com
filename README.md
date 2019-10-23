@@ -5,3 +5,12 @@ All the coding problems are from codewars.com
 
 User name: Saurock303
 Badge: https://www.codewars.com/users/saurockSaurav/badges/large
+
+Code Security check provided by:
+
+WhiteSource  Bolt 
+ 
+Code vulnerabilities check provided by: 
+ 
+[![DepShield Badge](https://depshield.sonatype.org/badges/owner/repository/depshield.svg)](https://depshield.github.io)
+
