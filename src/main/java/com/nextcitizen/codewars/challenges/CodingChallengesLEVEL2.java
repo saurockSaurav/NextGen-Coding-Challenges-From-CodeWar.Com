@@ -113,4 +113,35 @@ public class CodingChallengesLEVEL2 {
 		
 	}
 
+	
+	/**
+	 * Given Two array, merged them into one single array and sort them from lowest to highest order.
+	 * @param arr1
+	 * @param arr2
+	 * @return
+	 */
+	public int[] sortAndMergeTwoArray(int[] arr1, int[] arr2) {
+		int[] mergedAndSortedArry = new int[arr1.length + arr2.length];
+		int lenOfArr1 = arr1.length;
+		int i;
+
+		// step 1: merge arr1 and arr2 into single array i.e mergedArray
+		for (i = 0; i < mergedAndSortedArry.length; i++) {
+			if (i == arr1.length) {
+				for (i = 0; i < arr2.length; i++) {
+					mergedAndSortedArry[lenOfArr1] = arr2[i];
+					lenOfArr1++;
+				}
+				break;
+			} else {
+				mergedAndSortedArry[i] = arr1[i];
+			}
+		}
+
+		// step 2: sort the merged array in lowest to highest order and return the sorted Array.
+		Arrays.sort(mergedAndSortedArry);
+		
+		return mergedAndSortedArry;
+	}
+
 }
