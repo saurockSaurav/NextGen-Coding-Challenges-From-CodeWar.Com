@@ -1,5 +1,6 @@
 package com.nextcitizen.codewars.challenges;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
@@ -118,4 +119,14 @@ public class CodingChallengesLEVEL2Test {
 		assertFalse(codingChallengesLEVEL2.isNumberInAscendingOrder(new int[] { 56, 98, 123, 67, 742, 1024, 32, 90969 }));
 	}
 
+	/**
+	 * test when two array are given, merge them into one array and sort them in lowest to highest order. 
+	 */
+	@Test
+	public void test_sortAndMergeTwoArray() {
+	assertThat(codingChallengesLEVEL2.sortAndMergeTwoArray(new int[] {10,30,50}, new int [] {20,40,60})).isEqualTo(new int [] {10,20,30,40,50,60});
+	assertThat(codingChallengesLEVEL2.sortAndMergeTwoArray(new int[] {11,13,15}, new int [] {12,14,16})).isEqualTo(new int [] {11,12,13,14,15,16});
+	assertThat(codingChallengesLEVEL2.sortAndMergeTwoArray(new int[] {10,30,50,11,13,15}, new int [] {12,14,16,20,40,60})).isEqualTo(new int [] {10,11,12,13,14,15,16,20,30,40,50,60});
+	}
+	
 }
