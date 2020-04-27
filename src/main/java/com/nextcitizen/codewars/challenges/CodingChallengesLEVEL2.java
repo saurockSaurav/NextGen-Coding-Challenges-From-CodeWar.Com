@@ -1,5 +1,6 @@
 package com.nextcitizen.codewars.challenges;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 import org.springframework.stereotype.Component;
@@ -142,6 +143,50 @@ public class CodingChallengesLEVEL2 {
 		Arrays.sort(mergedAndSortedArry);
 		
 		return mergedAndSortedArry;
+	}
+	
+	/**Complete the solution so that it splits the string into pairs of two characters. 
+		If the string contains an odd number of characters then it should replace the missing second character 
+		of the final pair with an underscore ('_').
+		example: 
+		StringSplit.solution("abc") // should return {"ab", "c_"}
+		StringSplit.solution("abcdef") // should return {"ab", "cd", "ef"}
+	**/
+	
+	public String[] splitStringsIntoPairs(final String input) {
+		
+		char[]  inputArray = input.toCharArray();
+		
+	    String inputAsStringNow = String.valueOf(inputArray);
+		
+		String[] outputArray = null;
+
+		double sizeOfOutputArray = input.length();
+
+		System.out.println(sizeOfOutputArray);
+
+		if (sizeOfOutputArray % 2 != 0) {
+
+			double arrSize = sizeOfOutputArray / 2;
+			
+			int sizeOfOddArray = (int) Math.round(arrSize);
+			
+			outputArray = new String[sizeOfOddArray];
+			
+			for (int i = 0; i < sizeOfOddArray; i++) {
+				
+				if (String.valueOf(outputArray).equalsIgnoreCase(input)) {
+					
+				}
+				
+				outputArray[i] =  String.valueOf(inputAsStringNow.charAt(i)) + String.valueOf(inputAsStringNow.charAt(i+1));
+				
+			    System.out.println(outputArray);
+			}
+
+		}
+		return outputArray;
+
 	}
 
 }

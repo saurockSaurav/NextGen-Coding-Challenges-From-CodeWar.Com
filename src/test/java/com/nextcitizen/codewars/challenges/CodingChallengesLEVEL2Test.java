@@ -6,6 +6,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
+
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -127,6 +129,20 @@ public class CodingChallengesLEVEL2Test {
 	assertThat(codingChallengesLEVEL2.sortAndMergeTwoArray(new int[] {10,30,50}, new int [] {20,40,60})).isEqualTo(new int [] {10,20,30,40,50,60});
 	assertThat(codingChallengesLEVEL2.sortAndMergeTwoArray(new int[] {11,13,15}, new int [] {12,14,16})).isEqualTo(new int [] {11,12,13,14,15,16});
 	assertThat(codingChallengesLEVEL2.sortAndMergeTwoArray(new int[] {10,30,50,11,13,15}, new int [] {12,14,16,20,40,60})).isEqualTo(new int [] {10,11,12,13,14,15,16,20,30,40,50,60});
+	}
+	
+	
+	/**
+	 * test when two array are given, merge them into one array and sort them in lowest to highest order. 
+	 */
+	@Test
+	public void splitStringsIntoPairs() {
+		String s2 = "abf";
+		String s = "abcdef";
+		String s1 = "HelloWorld";
+		assertEquals("Should handle even string", "[ab,f_]", Arrays.toString(codingChallengesLEVEL2.splitStringsIntoPairs(s2)));
+		assertEquals("Should handle even string", "[ab, cd, ef]", Arrays.toString(codingChallengesLEVEL2.splitStringsIntoPairs(s)));
+		assertEquals("Should handle even string", "[He, ll, oW, or, ld]", Arrays.toString(codingChallengesLEVEL2.splitStringsIntoPairs(s1)));
 	}
 	
 }
