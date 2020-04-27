@@ -107,16 +107,16 @@ public class CodingChallengesLEVEL2Test {
 	 */
 	@Test
 	public void test_isNumberInAscendingOrder() {
-		assertTrue(codingChallengesLEVEL2.isNumberInAscendingOrder(new int[] { 1, 2, 3 }));
-		assertFalse(codingChallengesLEVEL2.isNumberInAscendingOrder(new int[] { 1, 3, 2 }));
-		assertTrue(codingChallengesLEVEL2.isNumberInAscendingOrder(new int[] { 1, 4, 13, 97, 508, 1047, 20058 }));
-		assertFalse(codingChallengesLEVEL2.isNumberInAscendingOrder(new int[] { 56, 98, 123, 67, 742, 1024, 32, 90969 }));
+		assertThat(codingChallengesLEVEL2.isNumberInAscendingOrder(new int[] { 1, 2, 3 })).isTrue();
+		assertThat(codingChallengesLEVEL2.isNumberInAscendingOrder(new int[] { 1, 3, 2 })).isFalse();
+		assertThat(codingChallengesLEVEL2.isNumberInAscendingOrder(new int[] { 1, 4, 13, 97, 508, 1047, 20058 })).isTrue();
+		assertThat(codingChallengesLEVEL2.isNumberInAscendingOrder(new int[] { 56, 98, 123, 67, 742, 1024, 32, 90969 })).isFalse();
 	}
 
 	@Test
 	public void test_isNumberInAscendingOrder_moreAdvancedCases() {
-		assertTrue(codingChallengesLEVEL2.isNumberInAscendingOrder(new int[] { 1, 4, 13, 97, 508, 1047, 20058 }));
-		assertFalse(codingChallengesLEVEL2.isNumberInAscendingOrder(new int[] { 56, 98, 123, 67, 742, 1024, 32, 90969 }));
+		assertThat(codingChallengesLEVEL2.isNumberInAscendingOrder(new int[] { 1, 4, 13, 97, 508, 1047, 20058 })).isTrue();
+		assertThat(codingChallengesLEVEL2.isNumberInAscendingOrder(new int[] { 56, 98, 123, 67, 742, 1024, 32, 90969 })).isTrue();
 	}
 
 	/**

@@ -125,7 +125,7 @@ public class CodingChallengesLEVEL2 {
 		int lenOfArr1 = arr1.length;
 		int i;
 
-		// step 1: merge arr1 and arr2 into single array i.e mergedArray
+		// step 1: merge arr1 and arr2 into single array i.e mergedAndSortedArry
 		for (i = 0; i < mergedAndSortedArry.length; i++) {
 			if (i == arr1.length) {
 				for (i = 0; i < arr2.length; i++) {
