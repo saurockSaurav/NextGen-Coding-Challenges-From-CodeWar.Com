@@ -1,19 +1,16 @@
 package com.nextcitizen.codewars.challenges;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-
-import java.util.Arrays;
-
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.Arrays;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = CodingChallengesLEVEL2.class)
@@ -144,5 +141,6 @@ public class CodingChallengesLEVEL2Test {
 		assertEquals("Should handle even string", "[ab, cd, ef]", Arrays.toString(codingChallengesLEVEL2.splitStringsIntoPairs(s)));
 		assertEquals("Should handle even string", "[He, ll, oW, or, ld]", Arrays.toString(codingChallengesLEVEL2.splitStringsIntoPairs(s1)));
 	}
+	///test  messsage to initiate git flow.
 	
 }
