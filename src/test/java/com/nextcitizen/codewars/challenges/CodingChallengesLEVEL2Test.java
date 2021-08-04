@@ -143,4 +143,13 @@ public class CodingChallengesLEVEL2Test {
 	}
 	///test  messsage to initiate git flow.
 	
+	
+	@Test
+	public void reverseWords() {
+		String actual = "What time is it now";
+		String expected = "now it is time What";
+		
+		assertThat(codingChallengesLEVEL2.reverseWords(actual)).isEqualTo(expected);
+		
+	}
 }
