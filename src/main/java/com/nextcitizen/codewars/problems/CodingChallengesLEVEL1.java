@@ -1,4 +1,4 @@
-package com.nextcitizen.codewars.challenges;
+package com.nextcitizen.codewars.problems;
 
 import java.util.ArrayList;
 import java.util.Arrays;

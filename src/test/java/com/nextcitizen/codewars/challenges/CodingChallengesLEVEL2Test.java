@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.nextcitizen.codewars.problems.CodingChallengesLEVEL2;
+
 import java.util.Arrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -19,6 +21,22 @@ public class CodingChallengesLEVEL2Test {
 	@Autowired
 	private CodingChallengesLEVEL2 codingChallengesLEVEL2;
 
+	
+	
+	/**
+	 * Given a linked List, Reverse it
+	 * 
+	 * 
+	 */
+	
+	@Test
+	public void test_ReverseTheLinkedList() {
+		
+		
+		
+	}
+	
+	
 	/**
 	 * Given two numbers and an arithmetic operator (the name of it, as a string),
 	 * return the result of the two numbers The four operators are "add",
@@ -150,6 +168,15 @@ public class CodingChallengesLEVEL2Test {
 		String expected = "now it is time What";
 		
 		assertThat(codingChallengesLEVEL2.reverseWords(actual)).isEqualTo(expected);
+		
+	}
+	
+	//Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
+	@Test
+	public void isValidParentheses() {
+		String inValidParentheses = "({)[}]";
+		assertThat(codingChallengesLEVEL2.isValidParentheses(inValidParentheses)).isFalse();
+		
 		
 	}
 }
