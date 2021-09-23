@@ -76,32 +76,26 @@ public class LeetCodeAssesment {
 		public boolean isParenthsValid(String s) {
 
 			System.out.println("Input: " + s);
-			
-			String acceptableTypes = "(){}[]";
 
-			if (acceptableTypes.length() < 2) {
+			if (s.length() < 2) {
 				return false;
 			}
 
 			Stack<Character> stack = new Stack<Character>();
-			
-			for (int i = 0; i < s.length(); i++) { 
+
+			for (int i = 0; i < s.length(); i++) {
 				System.out.println(s.charAt(i));
 				System.out.println(stack);
-				
-				if(s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) ==  ('[' )){
+
+				if (s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == ('[')) {
 					stack.push(s.charAt(i));
-				}
-				else if(!stack.isEmpty() && s.charAt(i) == ')' && stack.peek() == '(') {
+				} else if (!stack.isEmpty() && s.charAt(i) == ')' && stack.peek() == '(') {
 					stack.pop();
-				}
-				else if(!stack.isEmpty() && s.charAt(i) == '}' && stack.peek() == '{') {
+				} else if (!stack.isEmpty() && s.charAt(i) == '}' && stack.peek() == '{') {
 					stack.pop();
-				}
-				else if(!stack.isEmpty() && s.charAt(i) == ']' && stack.peek() == '[') {
+				} else if (!stack.isEmpty() && s.charAt(i) == ']' && stack.peek() == '[') {
 					stack.pop();
-				}
-				else {
+				} else {
 					return false;
 				}
 			}
@@ -110,6 +104,55 @@ public class LeetCodeAssesment {
 
 		}
 		
+		/**
+		 * Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+		   you may assume that each input would have exactly one solution, and you may not use the same element twice.
+           you can return the answer in any order.
+           Example:
+           Input: nums = [2,7,11,15], target = 9  Output: [0,1] Output: Because nums[0] + nums[1] == 9, we return [0, 1].
+           Input: nums = [3,2,4], target = 6 Output: [1,2] 
+           ///{-1,-2,-3,-4,-5};
+		 */
+		public int[] twoSum(int[] nums, int target) {
+
+			int newarr[] = new int[2];
+			System.out.println(nums);
+			for (int i = 0; i < nums.length - 1; i++) {
+				System.out.println("Number: " + nums[i]);
+				System.out.println("Target: " + target);
+				for (int j = i + 1; j < nums.length; j++) {
+					System.out.println("Next Number : " + nums[j]);
+					if (nums[i] + nums[j] == target) {
+						newarr[0] = i;
+						System.out.println("Position1: " + newarr[0]);
+						newarr[1] = j;
+						System.out.println("Position2: " + newarr[1]);
+					}
+				}
+			}
+
+			return newarr;
+		}
+		
+		
+		/**
+		 * Given a string s consisting of some words separated by some number of spaces, return the length of the last word in the string.
+			A word is a maximal substring consisting of non-space characters only.
+		 * Input: s = "   fly me   to   the moon  " Output: 4 Explanation: The last word is "moon" with length 4.
+		 * 
+		 */
+		
+		public int getLengthOfLastWord(String str) {
+			
+			String [] splitdString = str.trim().split("\\s+");
+			int len = splitdString.length - 1;
+			String lastword = splitdString[len];
+			int lengthOfLastWord= lastword.length();
+			return lengthOfLastWord;
+			
+			
+			
+		}
 }
 	
 

@@ -33,7 +33,7 @@ public class LeetCodingChallengesTest {
 	}
 	
 	@Test
-	public void isValidParentheses() {
+	public void Test_isValidParentheses() {
 		
 		String validParentheses = "[(){}]";
 		assertThat(leetCodeAssesment.isParenthsValid(validParentheses)).isTrue();
@@ -41,6 +41,25 @@ public class LeetCodingChallengesTest {
 		String inValidParentheses = "({)[}]";
 		assertThat(leetCodeAssesment.isParenthsValid(inValidParentheses)).isFalse();
 		
+	}
+	
+	@Test
+	public void Test_twoSum() {
+		int nums [] = {1,4,3,2};
+		int expectedPosition [] = {0,3};
+		assertThat(leetCodeAssesment.twoSum(nums, 3)).isEqualTo(expectedPosition);
+		
+		int nums1 [] = {-1,-2,-3,-4,-5};
+		int expectedPosition1 [] = {2,4};
+		assertThat(leetCodeAssesment.twoSum(nums1, -8)).isEqualTo(expectedPosition1);
+	}
+	
+	@Test
+	public void Test_getLengthOfLastWord() {
+		
+		String str= "  The   Sky    is    Blue    ";
+		assertThat(leetCodeAssesment.getLengthOfLastWord(str)).isEqualTo(4);
+
 		
 	}
 	
