@@ -20,7 +20,20 @@ public class LeetCodingChallengesTest {
 	public void setUp() {
 		this.leetCodeAssesment = new LeetCodeAssesment();
 	}
+	
+	@Test
+	public void testFindNonedups() {
+		int num[] = { 7, 1, 7, 2, 3, 3, 1 };
+		assertThat(leetCodeAssesment.findNonedups(num)).isEqualTo(2);
+	}
+	
 
+	@Test
+	public void testisHappyNumber() {
+		assertThat(leetCodeAssesment.isHappyNumber(19)).isTrue();
+	}
+	
+	
 	@Test
 	public void testMaxProfit() {
 		int price1[] = { 7, 1, 5, 3, 6, 4 };
