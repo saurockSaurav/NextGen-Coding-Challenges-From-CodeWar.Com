@@ -1,13 +1,29 @@
-package com.nextcitizen.codewars.challenges;
+package com.nextcitizen.codewars.problems;
 
-import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
 
 import org.springframework.stereotype.Component;
 
 @Component
 public class CodingChallengesLEVEL2 {
+	
+	
+	
+	/**
+	 * Reverse linked List 
+	 * 
+	 */
 
+	public List<?> reverseTheLinkedList(){
+		
+		
+		
+		
+		return null;
+	}
+	
 	/**
 	 * Given two numbers and an arithmetic operator (the name of it, as a string),
 	 * return the result of the two numbers The four operators are "add",
@@ -188,5 +204,46 @@ public class CodingChallengesLEVEL2 {
 		return outputArray;
 
 	}
+	
+	//Given an input string, reverse the string word by word. For example Given s = "the sky is blue", return "blue is sky the".
 
+	public String reverseWords(String s) {
+		String[] words = s.trim().split("\\s+");
+		String result = "";
+		for (int i = words.length - 1; i > 0; i--) {
+			result += words[i] + " ";
+		}
+
+		return result + words[0];
+	}
+	
+	// Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+	// The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
+
+	public boolean isValidParentheses(String s) {
+		if (s.length() % 2 == 1) {
+			return false;
+		}
+
+		Stack<Character> stack = new Stack<Character>();
+
+		for (int i = 0; i < s.length(); i++) {
+			System.out.println(s.charAt(i));
+			if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{') {
+				stack.push(s.charAt(i));
+			} else if (s.charAt(i) == ')' && !stack.isEmpty() && stack.peek() == '(') {
+				stack.pop();
+			} else if (s.charAt(i) == ']' && !stack.isEmpty() && stack.peek() == '[') {
+				stack.pop();
+			} else if (s.charAt(i) == '}' && !stack.isEmpty() && stack.peek() == '{') {
+				stack.pop();
+			} else {
+				return false;
+			}
+		}
+
+		return stack.isEmpty();
+	}
 }
+
