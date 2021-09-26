@@ -1,44 +1,120 @@
 package com.nextcitizen.leetcode.problems;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 public class LeetCodeAssesment {
 	
-	
 	/**
-	 * Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
-	 * Example 1: Input: nums = [2,2,1] Output: 1
+	 * You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
+		A customer's wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth.
+	 * Input: accounts = [[1,5],[7,3],[3,5]] Output: 10
+			Explanation: 
+			1st customer has wealth = 6
+			2nd customer has wealth = 10 
+			3rd customer has wealth = 8
+			The 2nd customer is the richest with a wealth of 10.
 	 * 
 	 */
-	public int findNonedups(int[] nums ) {
-		int val1 = 0;
-		Arrays.sort(nums);
-		
-		for( int i = 0; i < nums.length; i++ ) {
-			int curr = nums[i];
-			
-			int next = nums[i+1];
-			
-			if( curr != next ) {
-				val1 =  curr;
-			}
-		}
-		return val1;
-	}
 	
+	public int findMaximumWealth(int[][] accounts) {
+		int wealth = 0;
+
+		for (int i = 0; i < accounts.length; i++) {
+			int iwealth = 0;
+
+			for (int j = 0; j < accounts[i].length; j++) {
+				iwealth += accounts[i][j];
+			}
+
+			if (iwealth > wealth) {
+				wealth = iwealth;
+			}
+
+		}
+		return wealth;
+	}
+
+	/**
+	 * 
+	 * Given an integer array nums of length n where all the integers of nums are in the range [1, n] 
+	 * and each integer appears once or twice, return an array of all the integers that appears twice.
+	 * 	 * Example 1: Input: nums = [4,3,2,7,8,2,3,1]  Output: [2,3]
+		   Example 2: Input: nums = [1,1,2]  Output: [1]
+	 */
+	
+	 public List<Integer> findAllDuplicatesInArray(int[] nums) {
+	        
+		 List<Integer> lst = new ArrayList<>();
+		 Arrays.sort(nums);
+		 int count = 1;
+		 int twiceCount = 2;
+		 
+		 Map<Integer, Integer> mp = new HashMap<>();
+		 
+			for (int i = 0; i < nums.length; i++) {
+				System.out.println("Current Num:" + nums[i]);
+				if (mp.containsKey(nums[i])) {
+					mp.put(nums[i], mp.get(nums[i]) + 1);
+				}
+				else {
+					mp.put(nums[i], count);	
+				}
+				System.out.println(mp);
+			}
+			
+			for (Map.Entry<Integer, Integer> mapEntries : mp.entrySet()) {
+			 if( mapEntries.getValue() == twiceCount) {
+				 lst.add(mapEntries.getKey());
+			 }
+				
+			}
+		 return lst;
+	 }
+
+	/**
+	 * Given a non-empty array of integers nums, every element appears twice except
+	 * for one. Find that single one. Example 1: Input: nums = [2,2,1] Output: 1
+	 * 
+	 */
+	public int findNumberThatIsNotRepititive(int[] nums) {
+		int count = 1;
+		int repitiveNumber = 0;
+		Arrays.sort(nums);
+
+		Map<Integer, Integer> mp = new HashMap<>();
+		for (int i = 0; i < nums.length; i++) {
+			System.out.println("Current Num:" + nums[i]);
+			if (mp.containsKey(nums[i])) {
+				mp.put(nums[i], count + 1);
+			} else {
+				mp.put(nums[i], count);
+			}
+			System.out.println(mp);
+		}
+
+		for (Map.Entry<Integer, Integer> mapEntries : mp.entrySet()) {
+			if (mapEntries.getValue() == count) {
+				repitiveNumber = mapEntries.getKey();
+			}
+
+		}
+		return repitiveNumber;
+	}
+
 	/***
-	 * Write an algorithm to determine if a number n is happy.A happy number is a number defined by the following process:
-		Starting with any positive integer, replace the number by the sum of the squares of its digits.
-		Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
-		Those numbers for which this process ends in 1 are happy.
-		Example 1: Input: n = 19 Output: true
-		Explanation:
-			1^2 + 9^2 = 82
-			8^2 + 2^2 = 68
-			6^2 + 8^2 = 100
-			1^2 + 0^2 + 0^2 = 1
-		Example 2: Input: n = 2	Output: false
+	 * Write an algorithm to determine if a number n is happy.A happy number is a
+	 * number defined by the following process: Starting with any positive integer,
+	 * replace the number by the sum of the squares of its digits. Repeat the
+	 * process until the number equals 1 (where it will stay), or it loops endlessly
+	 * in a cycle which does not include 1. Those numbers for which this process
+	 * ends in 1 are happy. Example 1: Input: n = 19 Output: true Explanation: 1^2 +
+	 * 9^2 = 82 8^2 + 2^2 = 68 6^2 + 8^2 = 100 1^2 + 0^2 + 0^2 = 1 Example 2: Input:
+	 * n = 2 Output: false
 	 */
 	public boolean isHappyNumber(int input) {
 
@@ -56,11 +132,11 @@ public class LeetCodeAssesment {
 				System.out.println("firstNumber:" + str.charAt(i));
 				System.out.println("secondNumber:" + str.charAt(i + 1));
 				firstNum = str.charAt(i);
-				secondNum = str.charAt(i+1);
-				int squr1 = Math.multiplyExact( firstNum, firstNum) ;
-				int squr2 = Math.multiplyExact( secondNum, secondNum) ;
-				System.out.println("squareRoot" + squr1+squr2);
-				int squareRoot = squr1+squr2;
+				secondNum = str.charAt(i + 1);
+				int squr1 = Math.multiplyExact(firstNum, firstNum);
+				int squr2 = Math.multiplyExact(secondNum, secondNum);
+				System.out.println("squareRoot" + squr1 + squr2);
+				int squareRoot = squr1 + squr2;
 				if (squareRoot != 1) {
 					str = String.valueOf(squareRoot);
 				} else if (squareRoot == 1) {
@@ -72,7 +148,7 @@ public class LeetCodeAssesment {
 		return isHappyNumber;
 
 	}
-	
+
 	/**
 	 * Write an SQL query to report all the duplicate emails.
 	 */
@@ -83,7 +159,7 @@ public class LeetCodeAssesment {
 		return sql;
 
 	}
-	
+
 	/**
 	 * Write an SQL query to find the employees who earn more than their managers. .
 	 */

@@ -1,16 +1,17 @@
 package com.nextcitizen.leetcode.challenges;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.nextcitizen.leetcode.problems.LeetCodeAssesment;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = LeetCodeAssesment.class)
 public class LeetCodingChallengesTest {
 
@@ -21,21 +22,50 @@ public class LeetCodingChallengesTest {
 		this.leetCodeAssesment = new LeetCodeAssesment();
 	}
 	
+	
 	@Test
-	public void testFindNonedups() {
-		int num[] = { 7, 1, 7, 2, 3, 3, 1 };
-		assertThat(leetCodeAssesment.findNonedups(num)).isEqualTo(2);
+	public void test_findMaximumWealth() {
+		
+		int[][] num1 = {{1,2,3},{0,2,1 }};
+		assertThat(leetCodeAssesment.findMaximumWealth(num1)).isEqualTo(6);
+	}
+	
+	
+	
+	@Test
+	public void test_findNumberThatAppearTwice() {
+		
+		int num1[] = { 4,3,2,7,8,2,3,1 };
+		List<Integer> aList = new ArrayList<Integer>();
+		aList.add(2);
+		aList.add(3);
+		assertEquals(leetCodeAssesment.findAllDuplicatesInArray(num1), aList);
+		
+	}
+	
+	
+	@Test
+	public void test_findNumberThatIsNotRepititive() {
+		int num1[] = { 7, 1, 7, 2, 3, 3, 1 };
+		assertThat(leetCodeAssesment.findNumberThatIsNotRepititive(num1)).isEqualTo(2);
+		
+		int num2[] = { 0, 9, 8, 9, 8, 1, 0 };
+		assertThat(leetCodeAssesment.findNumberThatIsNotRepititive(num2)).isEqualTo(1);
+		
+		int num3[] = { 4, 3, 2, 4, 0, 2, 3 };
+		assertThat(leetCodeAssesment.findNumberThatIsNotRepititive(num3)).isEqualTo(0);
+		
 	}
 	
 
 	@Test
-	public void testisHappyNumber() {
-		assertThat(leetCodeAssesment.isHappyNumber(19)).isTrue();
+	public void test_isHappyNumber() {
+		assertThat(leetCodeAssesment.isHappyNumber(19)).isFalse();
 	}
 	
 	
 	@Test
-	public void testMaxProfit() {
+	public void test_MaxProfit() {
 		int price1[] = { 7, 1, 5, 3, 6, 4 };
 		int maxProfit1 = leetCodeAssesment.maxProfitByBruteForce(price1);
 		assertThat(maxProfit1).isEqualTo(5);
@@ -46,7 +76,7 @@ public class LeetCodingChallengesTest {
 	}
 	
 	@Test
-	public void Test_isValidParentheses() {
+	public void test__isValidParentheses() {
 		
 		String validParentheses = "[(){}]";
 		assertThat(leetCodeAssesment.isParenthsValid(validParentheses)).isTrue();
@@ -57,7 +87,7 @@ public class LeetCodingChallengesTest {
 	}
 	
 	@Test
-	public void Test_twoSum() {
+	public void test__twoSum() {
 		int nums [] = {1,4,3,2};
 		int expectedPosition [] = {0,3};
 		assertThat(leetCodeAssesment.twoSum(nums, 3)).isEqualTo(expectedPosition);
@@ -68,8 +98,7 @@ public class LeetCodingChallengesTest {
 	}
 	
 	@Test
-	public void Test_getLengthOfLastWord() {
-		
+	public void test_getLengthOfLastWord() {
 		String str= "  The   Sky    is    Blue    ";
 		assertThat(leetCodeAssesment.getLengthOfLastWord(str)).isEqualTo(4);
 
