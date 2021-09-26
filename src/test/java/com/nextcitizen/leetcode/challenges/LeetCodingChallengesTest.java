@@ -24,6 +24,16 @@ public class LeetCodingChallengesTest {
 	
 	
 	@Test
+	public void test_doesArrayContainsDuplicate() {
+		int num1[] = { 7, 1, 9, 8, 3, 7 };
+		assertThat(leetCodeAssesment.doesArrayContainsDuplicate(num1)).isTrue();
+		
+		int num2[] = { 4, 3, 2, 9, 0, 1, 13 };
+		assertThat(leetCodeAssesment.doesArrayContainsDuplicate(num2)).isFalse();
+		
+	}
+	
+	@Test
 	public void test_findMaximumWealth() {
 		
 		int[][] num1 = {{1,2,3},{0,2,1 }};

@@ -10,6 +10,29 @@ import java.util.Stack;
 public class LeetCodeAssesment {
 	
 	/**
+	 * Given an array of integers, find if the array contains any duplicates. Your function should return 
+		true if any value appears at least twice in the array, and it should return false if every element is distinct.
+	 * 
+	 */
+	
+	public boolean doesArrayContainsDuplicate( int [] input) {
+		
+		Map<Integer, Integer> mp = new HashMap<Integer, Integer>();
+		
+		for( int i : input) {
+			if(mp.containsKey(i)) {
+				return true;
+			}
+			else {
+				mp.put(i, 1);
+			}
+		}
+		
+		return false;
+		
+	}
+	
+	/**
 	 * You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has.
 		A customer's wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth.
 	 * Input: accounts = [[1,5],[7,3],[3,5]] Output: 10
