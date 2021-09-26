@@ -1,9 +1,12 @@
-This is a spring boot Application which provides a bunch of library that developers can extend, play around with implemented code and leverage it as per their needs. This is a plain POM dependency project. All the methods are tested in both positive and negative use cases.I have documented specification of each methods and their expected behavior. JUnit code coverage is around 85 %, My goal is to maintain 90% of coverage at all times. 
+This is a SpringBoot Application which consist of problems/solution from codewar , leetcode. All the methods are tested in both positive and negative use cases. I have documented specification of each methods and their expected behavior. JUnit code coverage is 100 %
 
 
-All the coding problems are from codewars.com
+visit me:
 
-User name: Saurock303
+LeetCode: https://leetcode.com/leet_thp_saurav_2021/ 
+
+Codears: https://www.codewars.com/users/saurockSaurav
+
 Badge: https://www.codewars.com/users/saurockSaurav/badges/large
 
 Code Security check provided by:
