@@ -7,6 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
+/**
+ * @author Saurav Thapa
+ * @since 2016
+ * 
+ */
 public class LeetCodeAssesment {
 	
 	
@@ -20,7 +25,7 @@ public class LeetCodeAssesment {
 	
 	public boolean isPalindrome(int x) {
 
-		boolean isPila = false;
+		boolean isPalindrome = false;
 
 		if (x < 0) {
 			return false;
@@ -33,11 +38,11 @@ public class LeetCodeAssesment {
 			}
 			
 			if (str.equals(reverseOrder.trim())) {
-				isPila = true;
+				isPalindrome = true;
 			}
 
 		}
-		return isPila;
+		return isPalindrome;
 	}
 	
 	/**
