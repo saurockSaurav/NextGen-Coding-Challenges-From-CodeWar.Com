@@ -24,6 +24,22 @@ public class LeetCodingChallengesTest {
 	
 	
 	@Test
+	public void test_isPalindrome() {
+		
+		assertThat(leetCodeAssesment.isPalindrome(0)).isTrue();
+		
+		assertThat(leetCodeAssesment.isPalindrome(121)).isTrue();
+		
+		assertThat(leetCodeAssesment.isPalindrome(-121)).isFalse();
+		
+		assertThat(leetCodeAssesment.isPalindrome(10)).isFalse();
+		
+		
+		
+	}
+	
+	
+	@Test
 	public void test_doesArrayContainsDuplicate() {
 		int num1[] = { 7, 1, 9, 8, 3, 7 };
 		assertThat(leetCodeAssesment.doesArrayContainsDuplicate(num1)).isTrue();
