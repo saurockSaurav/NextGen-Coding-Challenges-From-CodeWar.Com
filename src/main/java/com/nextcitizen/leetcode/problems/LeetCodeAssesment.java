@@ -2,6 +2,7 @@ package com.nextcitizen.leetcode.problems;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,30 @@ import java.util.Stack;
  * 
  */
 public class LeetCodeAssesment {
+	
+	
+	public int countNumberOfDupsInArray(List<Integer> lst) {
+		
+		if( lst.size() <= 1) {
+			return 0;
+		}
+		
+		Collections.sort(lst);
+		Map<Integer, Integer> mp = new HashMap<Integer, Integer>();
+		int count = 0;
+		for(int i : lst) {
+			System.out.println(mp);
+			if( mp.containsKey(i)) {
+				count++;
+			}
+			else {
+				mp.put(i, 1);
+			}
+			
+		}
+		
+		return count;
+	}
 	
 	
 	/***
@@ -48,10 +73,14 @@ public class LeetCodeAssesment {
 	/**
 	 * First of all we should take care of some edge cases. All negative numbers are not palindrome, for example: -123 is not a palindrome since the
 	 *  '-' does not equal to '3'. So we can return false for all negative numbers. 
-	 *  Now let's think about how to revert the last half of the number. For number 1221, if we do 1221 % 10, we get the last digit 1, to get the second to the last digit,
-	 *  we need to remove the last digit from 1221, we could do so by dividing it by 10, 1221 / 10 = 122. Then we can get the last digit again by doing a modulus by 10, 122 % 10 = 2,
-	 *  and if we multiply the last digit by 10 and add the second last digit, 1 * 10 + 2 = 12, it gives us the reverted number we want. Continuing this process would give us the 
-	 *  reverted number with more digits. Now the question is, how do we know that we've reached the half of the number? Since we divided the number by 10, and multiplied the reversed 
+	 *  Now let's think about how to revert the last half of the number. 
+	 *  For number 1221, if we do 1221 % 10, we get the last digit 1, to get the second to the last digit,
+	 *  we need to remove the last digit from 1221, we could do so by dividing it by 10, 1221 / 10 = 122. 
+	 *  Then we can get the last digit again by doing a modulus by 10, 122 % 10 = 2,
+	 *  and if we multiply the last digit by 10 and add the second last digit, 1 * 10 + 2 = 12, it gives us the reverted number we want. 
+	 *  Continuing this process would give us the 
+	 *  reverted number with more digits. Now the question is, how do we know that we've reached the half of the number?
+	 *   Since we divided the number by 10, and multiplied the reversed 
 	 *  number by 10, when the original number is less than the reversed number, it means we've processed half of the number digits.
 	 *    
 	 */

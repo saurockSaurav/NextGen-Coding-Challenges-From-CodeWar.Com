@@ -23,6 +23,23 @@ public class LeetCodingChallengesTest {
 	}
 	
 	
+	
+	@Test
+	public void test_countNumberOfDupsInArray() {
+		
+		List<Integer> aList = new ArrayList<Integer>();
+		aList.add(2);
+		aList.add(3);
+		aList.add(3);
+		aList.add(2);
+		aList.add(1);
+		aList.add(0);
+		
+		assertThat(leetCodeAssesment.countNumberOfDupsInArray(aList)).isEqualTo(2);
+		
+		
+		
+	}
 	@Test
 	public void test_isPalindrome() {
 		
